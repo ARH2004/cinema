@@ -1,18 +1,15 @@
 <template>
   <div class="app">
-    <vNavbar></vNavbar>
-    <v-main></v-main>
+    <vApp></vApp>
     <router-view />
   </div>
 </template>
 <script>
-import vNavbar from '@/components/v-navbar.vue';
-import vMain from "@/components/v-main.vue";
+import vApp from '@/components/v-app.vue'
 export default {
   name: 'app',
   components: {
-    vNavbar,
-    vMain,
+    vApp,
   },
 };
 </script>

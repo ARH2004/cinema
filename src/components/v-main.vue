@@ -2,20 +2,21 @@
   <div class="main">
     <div class="container">
       <div class="main__wrapper">
-        <div class="main__cards">
-            <div class="main__militants">
-                <img src="main__militants-img" alt="militants">
-                <h1 class="main__militants-title">Боевики</h1>
-                <p class="main__militants-text">Подборок: <span class="span"></span></p>
-            </div>
-        </div>
+        <vCardsCinema></vCardsCinema>
+        <vNewСollection></vNewСollection>
       </div>
     </div>
   </div>
 </template>
 <script>
+import vCardsCinema from "@/components/v-cardsCinema.vue";
+import vNewСollection from "@/components/v-newСollection.vue";
 export default {
   name: "v-main",
+  components: {
+    vCardsCinema,
+    vNewСollection
+  },
 };
 </script>
 <style lang="scss">
@@ -24,10 +25,10 @@ export default {
   margin: 0 auto;
 }
 .main {
-  background: url("@/assets/images/main-background.png") no-repeat #555555;
+  background: url("@/assets/images/main-background.png") no-repeat #212121;
   background-size: cover;
   padding-top: 30px;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
 }
 </style>

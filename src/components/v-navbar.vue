@@ -20,6 +20,19 @@
 <script>
 export default {
   name: "v-navbar",
+  data(){
+    return{
+        arr:[]
+    }
+  },
+  methods: {
+    async shit() {
+          const f = await fetch('https://api.kinopoisk.dev/movie?field=genres.name&search=аниме&field=year&search=2023-2023&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M')
+          const data = await f.json()
+          this.arr = data.docs
+          console.log(data)
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
