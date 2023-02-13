@@ -3,7 +3,7 @@ import routerMain from '@/views/router-main.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/coll',
     name: routerMain
   }
 ]

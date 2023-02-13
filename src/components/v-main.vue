@@ -2,8 +2,8 @@
   <div class="main">
     <div class="container">
       <div class="main__wrapper">
-        <vCardsCinema></vCardsCinema>
         <vNewСollection></vNewСollection>
+        <vCardsCinema></vCardsCinema>
       </div>
     </div>
   </div>
@@ -25,6 +25,10 @@ export default {
   margin: 0 auto;
 }
 .main {
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
   background: url("@/assets/images/main-background.png") no-repeat #212121;
   background-size: cover;
   padding-top: 30px;

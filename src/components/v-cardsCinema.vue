@@ -1,39 +1,43 @@
 <template>
   <div class="cardsCinema">
-    <div class="cardsCinema__cards">
-      <div class="cardsCinema__militants">
-        <img
-          class="cardsCinema__militants-img"
-          src="@/assets/images/militants.png"
-          alt="militants"
-        />
-        <h1 class="cardsCinema__militants-title">Боевики</h1>
-        <p class="cardsCinema__militants-text">
-          {{ selections }} <span class="span">453</span>
-        </p>
-      </div>
-      <div class="cardsCinema__two-column">
-        <div class="cardsCinema__military">
+    <div class="container">
+      <div class="cardsCinema__cards">
+        <div class="cardsCinema__militants">
           <img
-            class="cardsCinema__military-img"
-            src="@/assets/images/military.png"
-            alt="military"
+            class="cardsCinema__militants-img"
+            src="@/assets/images/militants.png"
+            alt="militants"
           />
-          <h1 class="cardsCinema__military-title">Военные</h1>
-          <p class="cardsCinema__military-text">
-            {{ selections }} <span class="span">100</span>
+          <h1 class="cardsCinema__militants-title">
+            Боевики
+          </h1>
+          <p class="cardsCinema__militants-text">
+            {{ selections }} <span class="span">{{ countMititants }}</span>
           </p>
         </div>
-        <div class="cardsCinema__detectives">
-          <img
-            class="cardsCinema__detectives-img"
-            src="@/assets/images/detectives.png"
-            alt="detectives"
-          />
-          <h1 class="cardsCinema__detectives-title">Детективы</h1>
-          <p class="cardsCinema__detectives-text">
-            {{ selections }} <span class="span">90</span>
-          </p>
+        <div class="cardsCinema__two-column">
+          <div class="cardsCinema__military">
+            <img
+              class="cardsCinema__military-img img"
+              src="@/assets/images/military.png"
+              alt="military"
+            />
+            <h1 class="cardsCinema__military-title">Военные</h1>
+            <p class="cardsCinema__military-text">
+              {{ selections }} <span class="span">{{ countMilitary }}</span>
+            </p>
+          </div>
+          <div class="cardsCinema__detectives">
+            <img
+              class="cardsCinema__detectives-img img"
+              src="@/assets/images/detectives.png"
+              alt="detectives"
+            />
+            <h1 class="cardsCinema__detectives-title">Детективы</h1>
+            <p class="cardsCinema__detectives-text">
+              {{ selections }} <span class="span">90</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -42,14 +46,40 @@
 <script>
 export default {
   name: "v-cardsCinema",
-    data() {
-        return {
-            selections: "Подборок:",
-        };
+  data() {
+    return {
+      selections: "Подборок:",
+      countMititants: "",
+      countMilitary: "",
+    };
+  },
+  methods: {
+    async countSelectMilitants() {
+      const response = await fetch(
+        "https://api.kinopoisk.dev/movie?field=genres.name&search=боевик&field=rating.kp&search=7-10&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
+      );
+      const data = await response.json();
+      this.countMititants = data.pages * 9;
     },
+    async countSelectMill(){
+        const responseTwo = await fetch(
+            "https://api.kinopoisk.dev/movie?field=genres.name&search=фантастика&field=rating.kp&search=7-10&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
+        );
+        const dataTwo = await responseTwo.json();
+        this.countMititant = dataTwo.pages * 9;
+    }
+  },
+  mounted() {
+      this.countSelectMilitants(),
+      this.countSelectMill()
+  },
 };
 </script>
 <style lang="scss" scoped>
+.container {
+  width: 1400px;
+  margin: 0 auto;
+}
 .cardsCinema {
   &__militants {
     position: relative;
@@ -58,7 +88,7 @@ export default {
   &__militants-title {
     position: absolute;
     top: 40%;
-    left: 40%;
+    left: 30%;
     color: #ffffff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
     font-weight: 700;
@@ -69,7 +99,7 @@ export default {
   &__militants-text {
     position: absolute;
     top: 55%;
-    left: 43%;
+    left: 32%;
     font-weight: 400;
     font-size: 30px;
     line-height: 35px;
@@ -80,7 +110,9 @@ export default {
   &__military {
     position: relative;
   }
-
+  &__militants-img {
+    max-width: 1100px;
+  }
   &__military-title {
     position: absolute;
     top: 40%;
@@ -124,7 +156,7 @@ export default {
 
   &__detectives-text {
     position: absolute;
-    top: 53%;
+    top: 54%;
     left: 35%;
     font-weight: 400;
     font-size: 22px;
@@ -133,7 +165,9 @@ export default {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
   }
 }
-
+.img {
+  max-width: 550px;
+}
 .span {
   color: #81becb;
   font-size: 30px;
