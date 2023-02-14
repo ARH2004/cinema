@@ -19,19 +19,34 @@
           <vComedy :selections="selections"></vComedy>
           <!-- Фильмы с криминалом -->
           <vCrime :selections="selections"></vCrime>
+          <!-- Фильмы с мелодрамой -->
+          <vMelodramas :selections="selections"></vMelodramas>
+          <!-- Фильмы с триллером -->
+          <vThrillers :selections="selections"></vThrillers>
+          <!-- Фильмы с ужасами -->
+          <vHorror :selections="selections"></vHorror>
+          <!-- Фильмы с фантастикой -->
+          <vFantastic :selections="selections"></vFantastic>
+          <!-- Фильмы с фэнтези -->
+          <vFantasy :selections="selections"></vFantasy>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import vMilitants from "@/components/v-militants.vue";
-import vMilitary from "@/components/v-military.vue";
-import vDetectives from "@/components/v-detectives.vue";
-import vChildren from "@/components/v-children.vue";
-import vDrama from "@/components/v-drama.vue";
-import vComedy from "@/components/v-comedy.vue";
-import vCrime from "@/components/v-crime.vue";
+import vMilitants from "@/components/MainCards/v-militants.vue";
+import vMilitary from "@/components/MainCards/v-military.vue";
+import vDetectives from "@/components/MainCards/v-detectives.vue";
+import vChildren from "@/components/MainCards/v-children.vue";
+import vDrama from "@/components/MainCards/v-drama.vue";
+import vComedy from "@/components/MainCards/v-comedy.vue";
+import vCrime from "@/components/MainCards/v-crime.vue";
+import vMelodramas from '@/components/MainCards/v-melodramas.vue'
+import vThrillers from '@/components/v-thrillers.vue'
+import vHorror from '@/components/MainCards/v-horror.vue'
+import vFantastic from '@/components/MainCards/v-fantastic.vue'
+import vFantasy from '@/components/MainCards/v-fantasy.vue'
 
 export default {
   name: "v-cardsCinema",
@@ -43,6 +58,11 @@ export default {
     vDrama,
     vComedy,
     vCrime,
+    vMelodramas,
+    vThrillers,
+    vHorror,
+    vFantastic,
+    vFantasy,
   },
   data() {
     return {
