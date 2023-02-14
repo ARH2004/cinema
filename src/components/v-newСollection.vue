@@ -40,7 +40,7 @@ export default {
     async newCinema() {
       try {
         const response = await fetch(
-          "https://api.kinopoisk.dev/movie?field=rating.kp&search=8-10&field=year&search=2022-2023&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
+          "https://api.kinopoisk.dev/movie?field=rating.kp&search=8-10&limit=7&page=3&field=year&search=2022-2023&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
         );
         const data = await response.json();
         this.cardArrays = data.docs;
@@ -61,7 +61,11 @@ export default {
 .newCollection {
   &__card {
     display: flex;
-    padding: 0px 15px 20px 10px;
+    padding: 25px 15px 20px 10px;
+    background: rgba(6, 6, 7, 0.5);
+    border: 1px solid #2B2B2B;
+    box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
   }
   &__box-title {
     background: #212121;

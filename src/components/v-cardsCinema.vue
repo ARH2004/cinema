@@ -1,20 +1,9 @@
 <template>
   <div class="cardsCinema">
     <div class="container">
+      <!-- Должен быть боевик -->
+      <vMilitants :selections="selections"></vMilitants>
       <div class="cardsCinema__cards">
-        <div class="cardsCinema__militants">
-          <img
-            class="cardsCinema__militants-img"
-            src="@/assets/images/militants.png"
-            alt="militants"
-          />
-          <h1 class="cardsCinema__militants-title">
-            Боевики
-          </h1>
-          <p class="cardsCinema__militants-text">
-            {{ selections }} <span class="span">{{ countMititants }}</span>
-          </p>
-        </div>
         <div class="cardsCinema__two-column">
           <div class="cardsCinema__military">
             <img
@@ -24,7 +13,7 @@
             />
             <h1 class="cardsCinema__military-title">Военные</h1>
             <p class="cardsCinema__military-text">
-              {{ selections }} <span class="span">{{ countMilitary }}</span>
+              {{ selections }} <span class="span">1107</span>
             </p>
           </div>
           <div class="cardsCinema__detectives">
@@ -35,7 +24,7 @@
             />
             <h1 class="cardsCinema__detectives-title">Детективы</h1>
             <p class="cardsCinema__detectives-text">
-              {{ selections }} <span class="span">90</span>
+              {{ selections }} <span class="span">1863</span>
             </p>
           </div>
         </div>
@@ -44,16 +33,19 @@
   </div>
 </template>
 <script>
+import vMilitants from "@/components/v-militants.vue";
 export default {
   name: "v-cardsCinema",
+  components: {
+    vMilitants,
+  },
   data() {
     return {
       selections: "Подборок:",
       countMititants: "",
-      countMilitary: "",
     };
   },
-  methods: {
+  computed: {
     async countSelectMilitants() {
       const response = await fetch(
         "https://api.kinopoisk.dev/movie?field=genres.name&search=боевик&field=rating.kp&search=7-10&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
@@ -61,17 +53,9 @@ export default {
       const data = await response.json();
       this.countMititants = data.pages * 9;
     },
-    async countSelectMill(){
-        const responseTwo = await fetch(
-            "https://api.kinopoisk.dev/movie?field=genres.name&search=фантастика&field=rating.kp&search=7-10&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
-        );
-        const dataTwo = await responseTwo.json();
-        this.countMititant = dataTwo.pages * 9;
-    }
   },
   mounted() {
-      this.countSelectMilitants(),
-      this.countSelectMill()
+    this.countSelectMilitants;
   },
 };
 </script>
@@ -81,37 +65,8 @@ export default {
   margin: 0 auto;
 }
 .cardsCinema {
-  &__militants {
-    position: relative;
-  }
-
-  &__militants-title {
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    color: #ffffff;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-    font-weight: 700;
-    font-size: 65px;
-    line-height: 73px;
-  }
-
-  &__militants-text {
-    position: absolute;
-    top: 55%;
-    left: 32%;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 35px;
-    color: #ffffff;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-  }
-
   &__military {
     position: relative;
-  }
-  &__militants-img {
-    max-width: 1100px;
   }
   &__military-title {
     position: absolute;
