@@ -1,22 +1,18 @@
 <template>
-  <div class="children">
-    <img
-      class="children__children-img"
-      src="@/assets/images/children.png"
-      alt="children"
-    />
-    <h2 class="children__children-title">Детские</h2>
-    <p class="children__children-text">
-      {{ selections }} <span>{{ countChildren }}</span>
+  <div class="drama">
+    <img src="@/assets/images/drama.png" alt="drama" class="drama__drama-img" />
+    <h2 class="drama__drama-title">Драма</h2>
+    <p class="drama__drama-text">
+      {{ selections }} <span>{{ countDrama }}</span>
     </p>
   </div>
 </template>
 <script>
 export default {
-  name: "v-children",
+  name: "v-drama",
   data() {
     return {
-      countChildren: 0,
+      countDrama: 0,
     };
   },
   props: {
@@ -26,39 +22,39 @@ export default {
     },
   },
   computed: {
-    async countSelectChildren() {
+    async countSelectDrama() {
       const response = await fetch(
-        "https://api.kinopoisk.dev/movie?field=genres.name&search=детский&field=rating.kp&search=8-10&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
+        "https://api.kinopoisk.dev/movie?field=genres.name&search=драма&field=rating.kp&search=8-10&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
       );
       const data = await response.json();
-      this.countChildren = data.pages * 9;
+      this.countDrama = data.pages * 9;
     },
   },
   mounted() {
-    this.countSelectChildren;
+    this.countSelectDrama;
   },
 };
 </script>
 <style lang="scss" scoped>
-.children {
+.drama {
   position: relative;
-  &__children-img {
+  &__drama-img {
     max-width: 365px;
   }
-  &__children-title {
+  &__drama-title {
     position: absolute;
     top: 35%;
-    left: 8%;
+    left: 35%;
     font-weight: 700;
     font-size: 40px;
     line-height: 45px;
     color: #ffffff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
   }
-  &__children-text {
+  &__drama-text {
     position: absolute;
     top: 50%;
-    left: 9%;
+    left: 38%;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
@@ -67,8 +63,8 @@ export default {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
   }
 }
-span{
-  color: #81BECB;
+span {
+  color: #81becb;
   font-size: 20px;
 }
 </style>
