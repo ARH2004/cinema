@@ -5,17 +5,8 @@
       <vMilitants :selections="selections"></vMilitants>
       <div class="cardsCinema__cards">
         <div class="cardsCinema__two-column">
-          <div class="cardsCinema__military">
-            <img
-              class="cardsCinema__military-img img"
-              src="@/assets/images/military.png"
-              alt="military"
-            />
-            <h1 class="cardsCinema__military-title">Военные</h1>
-            <p class="cardsCinema__military-text">
-              {{ selections }} <span class="span">1107</span>
-            </p>
-          </div>
+            <!-- Должен быть военные -->
+            <vMilitary :selections="selections"></vMilitary>
           <div class="cardsCinema__detectives">
             <img
               class="cardsCinema__detectives-img img"
@@ -34,10 +25,12 @@
 </template>
 <script>
 import vMilitants from "@/components/v-militants.vue";
+import vMilitary from "@/components/v-military.vue";
 export default {
   name: "v-cardsCinema",
   components: {
     vMilitants,
+    vMilitary,
   },
   data() {
     return {
@@ -65,31 +58,6 @@ export default {
   margin: 0 auto;
 }
 .cardsCinema {
-  &__military {
-    position: relative;
-  }
-  &__military-title {
-    position: absolute;
-    top: 40%;
-    left: 38%;
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 56px;
-    color: #ffffff;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-  }
-
-  &__military-text {
-    position: absolute;
-    top: 53%;
-    left: 41.5%;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 26px;
-    color: #ffffff;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-  }
-
   &__detectives {
     position: relative;
   }
@@ -119,12 +87,5 @@ export default {
     color: #ffffff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
   }
-}
-.img {
-  max-width: 550px;
-}
-.span {
-  color: #81becb;
-  font-size: 30px;
 }
 </style>
