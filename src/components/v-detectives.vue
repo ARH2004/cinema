@@ -7,18 +7,35 @@
     />
     <h1 class="detectives__detectives-title">Детективы</h1>
     <p class="detectives__detectives-text">
-      {{ selections }} <span class="span">1863</span>
+      {{ selections }} <span class="span">{{ countDetectives }}</span>
     </p>
   </div>
 </template>
 <script>
 export default {
   name: "v-detectives",
+  data() {
+    return {
+      countDetectives: 0,
+    };
+  },
   props: {
     selections: {
       type: String,
       required: true,
     },
+  },
+  computed: {
+    async countSelectDetectives() {
+      const response = await fetch(
+        "https://api.kinopoisk.dev/movie?field=genres.name&search=детектив&field=rating.kp&search=8-10&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
+      );
+      const data = await response.json();
+      this.countDetectives = data.pages * 9;
+    },
+  },
+  mounted() {
+    this.countSelectDetectives;
   },
 };
 </script>
@@ -26,9 +43,9 @@ export default {
 .detectives {
   position: relative;
 
-    &__detectives-img{
-        max-width: 550px;
-    }
+  &__detectives-img {
+    max-width: 550px;
+  }
 
   &__detectives-title {
     position: absolute;

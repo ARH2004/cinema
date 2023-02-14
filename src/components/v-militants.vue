@@ -14,12 +14,29 @@
 <script>
 export default {
   name: "v-militants",
+  data() {
+    return {
+      countMititants: 0,
+    };
+  },
   props: {
-        selections: {
-            type: String,
-          required: true,
-        }
-    }
+    selections: {
+      type: String,
+      required: true,
+    },
+  },
+  computed: {
+    async countSelectMilitants() {
+      const response = await fetch(
+        "https://api.kinopoisk.dev/movie?field=genres.name&search=боевик&field=rating.kp&search=8-10&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
+      );
+      const data = await response.json();
+      this.countMititants = data.pages * 9;
+    },
+  },
+  mounted() {
+    this.countSelectMilitants;
+  },
 };
 </script>
 <style lang="scss" scoped>
