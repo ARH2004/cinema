@@ -7,17 +7,8 @@
         <div class="cardsCinema__two-column">
             <!-- Должен быть военные -->
             <vMilitary :selections="selections"></vMilitary>
-          <div class="cardsCinema__detectives">
-            <img
-              class="cardsCinema__detectives-img img"
-              src="@/assets/images/detectives.png"
-              alt="detectives"
-            />
-            <h1 class="cardsCinema__detectives-title">Детективы</h1>
-            <p class="cardsCinema__detectives-text">
-              {{ selections }} <span class="span">1863</span>
-            </p>
-          </div>
+            <!-- Должен быть детективы -->
+            <vDetectives :selections="selections"></vDetectives>
         </div>
       </div>
     </div>
@@ -26,11 +17,14 @@
 <script>
 import vMilitants from "@/components/v-militants.vue";
 import vMilitary from "@/components/v-military.vue";
+import vDetectives from '@/components/v-detectives.vue'
+
 export default {
   name: "v-cardsCinema",
   components: {
     vMilitants,
     vMilitary,
+    vDetectives,
   },
   data() {
     return {
@@ -58,34 +52,8 @@ export default {
   margin: 0 auto;
 }
 .cardsCinema {
-  &__detectives {
-    position: relative;
-  }
-
   &__two-column {
     display: flex;
-  }
-
-  &__detectives-title {
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 56px;
-    color: #ffffff;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-  }
-
-  &__detectives-text {
-    position: absolute;
-    top: 54%;
-    left: 35%;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 26px;
-    color: #ffffff;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
   }
 }
 </style>
