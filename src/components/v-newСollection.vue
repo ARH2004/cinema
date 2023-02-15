@@ -40,7 +40,7 @@ export default {
     async newCinema() {
       try {
         const response = await fetch(
-          "https://api.kinopoisk.dev/movie?field=rating.kp&search=8-10&limit=5&page=9&field=year&search=2022-2023&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
+          "https://api.kinopoisk.dev/movie?field=rating.kp&search=8-10&limit=5&page=19&field=year&search=2022-2023&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
         );
         const data = await response.json();
         this.cardArrays = data.docs;
