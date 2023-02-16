@@ -3,7 +3,7 @@
     <swiper
       :modules="modules"
       :slides-per-view="1"
-      :space-between="50"
+      :space-between="300"
       :navigation="{
         nextEl: '.nextArrow',
         prevEl: '.prevArrow',
@@ -21,7 +21,7 @@
         <div class="box">
           <img src="@/assets/images/viking.png" alt="viking" class="box__img" />
           <div class="box__text-in-img">
-            <p class="box__text">Лучшие сериалы 2015-2021 годов</p>
+            <p class="box__text">Лучшие сериалы 2019-2023 годов</p>
             <my-button class="box__btn">Смотреть!</my-button>
           </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="box">
           <img src="@/assets/images/viking.png" alt="viking" class="box__img" />
           <div class="box__text-in-img">
-            <p class="box__text">Лучшие сериалы 2015-2021 годов</p>
+            <p class="box__text">Лучшие сериалы 2019-2023 годов</p>
             <my-button class="box__btn">Смотреть!</my-button>
           </div>
         </div>
@@ -39,7 +39,7 @@
         <div class="box">
           <img src="@/assets/images/viking.png" alt="viking" class="box__img" />
           <div class="box__text-in-img">
-            <p class="box__text">Лучшие сериалы 2015-2021 годов</p>
+            <p class="box__text">Лучшие сериалы 2019-2023 годов</p>
             <my-button class="box__btn">Смотреть!</my-button>
           </div>
         </div>
@@ -74,6 +74,7 @@ export default {
 }
 .box {
   position: relative;
+  margin-bottom: 10px;
   &__img {
     width: 320px;
   }

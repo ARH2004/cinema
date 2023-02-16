@@ -143,8 +143,12 @@ export default {
   }
   &__promo {
     margin-top: 50px;
-    text-align: start;
     padding-left: 10px;
+    background: rgba(28, 29, 31, 0.5);
+    border: 1px solid #2b2b2b;
+    box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
   }
 }
 .txt {

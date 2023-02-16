@@ -8,6 +8,7 @@
         </div>
         <vCardsCinema></vCardsCinema>
       </div>
+              <vFooter></vFooter>
     </div>
   </div>
 </template>
@@ -15,6 +16,7 @@
 import vCardsCinema from "@/components/v-cardsCinema.vue";
 import vNwСollection from '@/components/v-nwСollection.vue';
 import vPopularCollections from '@/components/v-popularCollections.vue'
+import vFooter from '@/components/v-footer.vue'
 
 export default {
   name: "v-main",
@@ -22,6 +24,7 @@ export default {
     vCardsCinema,
     vNwСollection,
     vPopularCollections,
+    vFooter,
   },
 };
 </script>
