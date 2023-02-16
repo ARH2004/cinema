@@ -2,7 +2,10 @@
   <div class="main">
     <div class="container">
       <div class="main__wrapper">
-        <vNewСollection></vNewСollection>
+        <div class="main__flex">
+          <vNwСollection></vNwСollection>
+          <vPopularCollections></vPopularCollections>
+        </div>
         <vCardsCinema></vCardsCinema>
       </div>
     </div>
@@ -10,12 +13,15 @@
 </template>
 <script>
 import vCardsCinema from "@/components/v-cardsCinema.vue";
-import vNewСollection from "@/components/v-newСollection.vue";
+import vNwСollection from '@/components/v-nwСollection.vue';
+import vPopularCollections from '@/components/v-popularCollections.vue'
+
 export default {
   name: "v-main",
   components: {
     vCardsCinema,
-    vNewСollection
+    vNwСollection,
+    vPopularCollections,
   },
 };
 </script>
@@ -28,6 +34,10 @@ export default {
   &__wrapper{
     display: flex;
     justify-content: space-between;
+  }
+  &__flex{
+    display: flex;
+    flex-direction: column;
   }
   background: url("@/assets/images/main-background.png") no-repeat #212121;
   background-size: cover;

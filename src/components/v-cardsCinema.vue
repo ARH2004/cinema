@@ -84,36 +84,6 @@
             без регистрации!
           </p>
         </div>
-        <div class="EffectCards-swiper">
-          <swiper
-            :modules="modules"
-            :slides-per-view="1"
-            :space-between="50"
-            navigation
-            :pagination="{ clickable: true }"
-            :scrollbar="{ draggable: true }"
-            @swiper="onSwiper"
-            @slideChange="onSlideChange"
-            :autoplay="{
-              delay: 7000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true
-            }"
-          >
-            <swiper-slide>
-              <img src="@/assets/images/comedy.png" alt="" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="@/assets/images/comedy.png" alt="" />
-            </swiper-slide>
-            <swiper-slide
-              ><img src="@/assets/images/comedy.png" alt=""
-            /></swiper-slide>
-                        <swiper-slide
-              ><img src="@/assets/images/comedy.png" alt=""
-            /></swiper-slide>
-          </swiper>
-        </div>
       </div>
     </div>
   </div>
@@ -131,17 +101,6 @@ import vThrillers from "@/components/v-thrillers.vue";
 import vHorror from "@/components/MainCards/v-horror.vue";
 import vFantastic from "@/components/MainCards/v-fantastic.vue";
 import vFantasy from "@/components/MainCards/v-fantasy.vue";
-import { Autoplay, Pagination } from "swiper";
-
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
-import "swiper/scss/scrollbar";
-import "swiper/scss/autoplay";
 
 export default {
   name: "v-cardsCinema",
@@ -158,19 +117,12 @@ export default {
     vHorror,
     vFantastic,
     vFantasy,
-    Swiper,
-    SwiperSlide,
   },
   data() {
     return {
       selections: "Подборок:",
     };
   },
-  setup(){
-    return {
-        modules: [Pagination, Autoplay],
-      };
-  }
 };
 </script>
 <style lang="scss" scoped>

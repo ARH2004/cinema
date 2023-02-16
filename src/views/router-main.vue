@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import newColl from '@/components/v-newСollection.vue'
+import newColl from '@/components/v-nwСollection.vue'
 export default {
     components: {
         newColl
