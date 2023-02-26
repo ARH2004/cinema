@@ -70,4 +70,8 @@ export default {
     max-width: 150px;
   }
 }
+.navbar__item:hover{
+  color: #81BECB;
+  transition: 0.3s all;
+}
 </style>
