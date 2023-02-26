@@ -71,4 +71,8 @@ span{
   color: #81BECB;
   font-size: 20px;
 }
+.children__children-img:hover{
+  transform: scale(1.04);
+  transition: 0.2s;
+}
 </style>

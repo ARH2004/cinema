@@ -13,13 +13,8 @@
             </div>
             <div class="list">
               <h3 class="footer__title">Меню</h3>
-              <ul class="footer__list">
-                <li class="footer__item">Подборки</li>
-                <li class="footer__item">Подборки</li>
-                <li class="footer__item">Подборки</li>
-                <li class="footer__item">Подборки</li>
-                <li class="footer__item">Подборки</li>
-                <li class="footer__item">Подборки</li>
+              <ul class="footer__list" v-for="list in dataList" :key="list.id">
+                <li class="footer__item">{{ list.text }}</li>
               </ul>
             </div>
             <img
@@ -72,15 +67,32 @@
 <script>
 export default {
   name: "v-footer",
+  data(){
+    return {
+      dataList: [
+        {id: Date.now(), text: 'Подборки'},
+        {id: Date.now(), text: 'По жанру'},
+        {id: Date.now(), text: 'Фильмы'},
+        {id: Date.now(), text: 'Сериалы'},
+        {id: Date.now(), text: 'Мультфильмы'},
+        {id: Date.now(), text: 'Аниме'},
+      ]
+    }
+  },
 };
 </script>
 <style lang="scss" scoped>
 .footer {
-  margin-top: 60px;
   backdrop-filter: blur(10px);
+  background: radial-gradient(
+    696.2% 730.65% at 47.6% 26.27%,
+    #181a19 0%,
+    #24282b 68.62%
+  );
   &__wrapper {
     display: flex;
     flex-direction: column;
+    padding-top: 30px;
   }
   &__content {
     display: flex;

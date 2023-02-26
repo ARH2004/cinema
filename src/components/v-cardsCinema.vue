@@ -97,7 +97,7 @@ import vDrama from "@/components/MainCards/v-drama.vue";
 import vComedy from "@/components/MainCards/v-comedy.vue";
 import vCrime from "@/components/MainCards/v-crime.vue";
 import vMelodramas from "@/components/MainCards/v-melodramas.vue";
-import vThrillers from "@/components/v-thrillers.vue";
+import vThrillers from "@/components/MainCards/v-thrillers.vue";
 import vHorror from "@/components/MainCards/v-horror.vue";
 import vFantastic from "@/components/MainCards/v-fantastic.vue";
 import vFantasy from "@/components/MainCards/v-fantasy.vue";

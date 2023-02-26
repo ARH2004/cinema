@@ -65,4 +65,8 @@ span {
   color: #81becb;
   font-size: 20px;
 }
+.fantasy__fantasy-img:hover{
+  transform: scale(1.04);
+  transition: 0.2s;
+}
 </style>

@@ -45,7 +45,7 @@ export default {
   &__militants-title {
     position: absolute;
     top: 40%;
-    left: 30%;
+    left: 35%;
     color: #ffffff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
     font-weight: 700;
@@ -56,7 +56,7 @@ export default {
   &__militants-text {
     position: absolute;
     top: 55%;
-    left: 32%;
+    left: 38%;
     font-weight: 400;
     font-size: 30px;
     line-height: 35px;
@@ -71,5 +71,9 @@ export default {
 .span {
   color: #81becb;
   font-size: 30px;
+}
+.militants__militants-img:hover{
+  transform: scale(1.02);
+  transition: 0.2s;
 }
 </style>

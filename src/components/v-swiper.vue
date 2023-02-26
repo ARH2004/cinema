@@ -14,33 +14,15 @@
       @slideChange="onSlideChange"
       :loop="true"
     >
-            <div class="nav-indicator nextArrow">
-          <img src="@/assets/images/buttonSwiper.png" alt="button" />
-        </div>
-      <swiper-slide>
+      <div class="nav-indicator nextArrow">
+        <img src="@/assets/images/buttonSwiper.png" alt="button" />
+      </div>
+      <swiper-slide v-for="swip in dataSwiper" :key="swip.id">
         <div class="box">
-          <img src="@/assets/images/viking.png" alt="viking" class="box__img" />
+          <img :src="require(`../assets/images/${swip.img}`)" alt="viking" class="box__img" />
           <div class="box__text-in-img">
-            <p class="box__text">Лучшие сериалы 2019-2023 годов</p>
-            <my-button class="box__btn">Смотреть!</my-button>
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="box">
-          <img src="@/assets/images/viking.png" alt="viking" class="box__img" />
-          <div class="box__text-in-img">
-            <p class="box__text">Лучшие сериалы 2019-2023 годов</p>
-            <my-button class="box__btn">Смотреть!</my-button>
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="box">
-          <img src="@/assets/images/viking.png" alt="viking" class="box__img" />
-          <div class="box__text-in-img">
-            <p class="box__text">Лучшие сериалы 2019-2023 годов</p>
-            <my-button class="box__btn">Смотреть!</my-button>
+            <p class="box__text">{{ swip.title }}</p>
+            <my-button class="box__btn">{{ swip.btn }}</my-button>
           </div>
         </div>
       </swiper-slide>
@@ -59,6 +41,16 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  data(){
+    return{
+      dataSwiper: [
+        {id: Date.now(), img: 'viking.png', title: 'Лучшие сериалы 2021-2023 годов', btn: 'Смотреть!'},
+        {id: Date.now(), img: 'viking.png', title: 'Лучшие сериалы 2018-2020 годов', btn: 'Смотреть!'},
+        {id: Date.now(), img: 'viking.png', title: 'Лучшие сериалы 2015-20217 годов', btn: 'Смотреть!'},
+        {id: Date.now(), img: 'viking.png', title: 'Лучшие сериалы 2010-2014 годов', btn: 'Смотреть!'},
+      ]
+    }
   },
   setup() {
     return {

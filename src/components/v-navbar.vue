@@ -3,14 +3,8 @@
     <div class="container">
       <div class="navbar__wrapper">
         <img class="navbar__logo" src="@/assets/images/logoMovie.png" alt="logo" />
-        <ul class="navbar__list">
-          <li class="navbar__item">Главная</li>
-          <li class="navbar__item">Подборки</li>
-          <li class="navbar__item">По жанру</li>
-          <li class="navbar__item">Фильмы</li>
-          <li class="navbar__item">Сериалы</li>
-          <li class="navbar__item">Мультфильмы</li>
-          <li class="navbar__item">Аниме</li>
+        <ul class="navbar__list" v-for="list in dataNavbar" :key="list.id">
+          <li class="navbar__item">{{ list.text }}</li>
         </ul>
         <my-input :placeholder="'Поиск по сайту'"></my-input>
       </div>
@@ -22,7 +16,16 @@ export default {
   name: "v-navbar",
   data(){
     return{
-        arr:[]
+        arr:[],
+        dataNavbar: [
+          {id: Date.now(), text: 'Главная'},
+          {id: Date.now(), text: 'Подборки'},
+          {id: Date.now(), text: 'По жанру'},
+          {id: Date.now(), text: 'Фильмы'},
+          {id: Date.now(), text: 'Сериалы'},
+          {id: Date.now(), text: 'Мультфильмы'},
+          {id: Date.now(), text: 'Аниме'},
+        ]
     }
   },
   methods: {
