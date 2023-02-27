@@ -5,9 +5,27 @@
         <button class="navbar__btn-logo" @click="linkMain">
           <img class="navbar__logo" src="@/assets/images/logoMovie.png" alt="logo" />
         </button>
-        <ul class="navbar__list" v-for="list in dataNavbar" :key="list.id">
+        <ul class="navbar__list">
           <li class="navbar__item">
-            <button class="navbar__btn" @click="linkMain">{{ list.text }}</button>
+            <button class="navbar__btn" @click="linkMain">Главная</button>
+          </li>
+                    <li class="navbar__item">
+            <button class="navbar__btn" @click="linkSelections">Подборки</button>
+          </li>
+                    <li class="navbar__item">
+            <button class="navbar__btn" @click="linkMain">По жанру</button>
+          </li>
+                    <li class="navbar__item">
+            <button class="navbar__btn" @click="linkMain">Фильмы</button>
+          </li>
+                    <li class="navbar__item">
+            <button class="navbar__btn" @click="linkMain">Сериалы</button>
+          </li>
+                    <li class="navbar__item">
+            <button class="navbar__btn" @click="linkMain">Мультфильмы</button>
+          </li>
+                    <li class="navbar__item">
+            <button class="navbar__btn" @click="linkMain">Анимея</button>
           </li>
         </ul>
         <my-input :placeholder="'Поиск по сайту'"></my-input>
@@ -41,6 +59,9 @@ export default {
     },
     linkMain(){
       return this.$router.push('/main')
+    },
+    linkSelections(){
+      return this.$router.push('/selections')
     }
   }
 };

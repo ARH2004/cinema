@@ -1,5 +1,5 @@
 <template>
-  <div class="vApp">
+  <div class="vMain">
     <vNavbar></vNavbar>
     <div class="main">
       <div class="container">
@@ -11,9 +11,9 @@
           <vCardsCinema></vCardsCinema>
         </div>
       </div>
-  </div>
-    <vFooter></vFooter>
-  </div>
+    </div>
+      <vFooter></vFooter>
+    </div>
 </template>
 <script>
 import vNavbar from "@/components/v-navbar.vue";

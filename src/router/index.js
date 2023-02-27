@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import pageMain from '@/views/pageMain.vue'
-import aboutPage from '@/views/aboutPage.vue'
+import pageSelections from '@/views/pageSelections.vue'
 
 
 const routes = [
   {
-    path: '/',
-    component: aboutPage
+    path: '/selections',
+    component: pageSelections
   },
   {
     path: '/main',

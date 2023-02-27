@@ -1,14 +1,14 @@
 <template>
   <div>
-    <vApp></vApp>
+    <vMain></vMain>
   </div>
 </template>
 <script>
-import vApp from '@/components/v-main.vue'
+import vMain from '@/components/v-main.vue'
 export default {
   name: 'app',
   components: {
-    vApp,
+    vMain,
   },
 };
 </script>

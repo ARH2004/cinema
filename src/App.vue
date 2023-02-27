@@ -9,4 +9,7 @@ export default {
 };
 </script>
 <style lang="scss" src="@/assets/style/nullstyle.scss">
+*{
+  overflow-x: hidden;
+}
 </style>
