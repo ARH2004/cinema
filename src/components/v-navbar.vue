@@ -2,9 +2,13 @@
   <div class="navbar">
     <div class="container">
       <div class="navbar__wrapper">
-        <img class="navbar__logo" src="@/assets/images/logoMovie.png" alt="logo" />
+        <button class="navbar__btn-logo" @click="linkMain">
+          <img class="navbar__logo" src="@/assets/images/logoMovie.png" alt="logo" />
+        </button>
         <ul class="navbar__list" v-for="list in dataNavbar" :key="list.id">
-          <li class="navbar__item">{{ list.text }}</li>
+          <li class="navbar__item">
+            <button class="navbar__btn" @click="linkMain">{{ list.text }}</button>
+          </li>
         </ul>
         <my-input :placeholder="'Поиск по сайту'"></my-input>
       </div>
@@ -34,6 +38,9 @@ export default {
           const data = await f.json()
           this.arr = data.docs
           console.log(data)
+    },
+    linkMain(){
+      return this.$router.push('/main')
     }
   }
 };
@@ -59,18 +66,22 @@ export default {
   &__list {
     display: flex;
   }
-  &__item {
+  &__btn {
+    background: none;
     margin-left: 20px;
     color: white;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
   }
+  &__btn-logo{
+    background: none;
+  }
   &__logo{
     max-width: 150px;
   }
 }
-.navbar__item:hover{
+.navbar__btn:hover{
   color: #81BECB;
   transition: 0.3s all;
 }

@@ -45,7 +45,7 @@
           class="footer__line-two"
         />
         <div class="footer__icons">
-          <p class="footer__document">©Все права защищены MovieDB.ru 2021</p>
+          <p class="footer__document">© Все права защищены MovieDB.ru 2021</p>
           <div class="footer__icon">
             <img
               src="@/assets/images/facebook.png"
@@ -82,6 +82,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.container{
+  width: 1400px;
+  margin: 0 auto;
+}
 .footer {
   backdrop-filter: blur(10px);
   background: radial-gradient(
