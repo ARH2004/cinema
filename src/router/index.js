@@ -9,7 +9,7 @@ const routes = [
     component: pageSelections
   },
   {
-    path: '/main',
+    path: '/',
     component: pageMain
   },
 

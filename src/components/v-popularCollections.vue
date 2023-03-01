@@ -48,4 +48,10 @@ export default {
     margin-left: -20px;
   }
 }
+:deep(.swiper-pagination-bullet-active) {
+    background: white;
+}
+:deep(.swiper-pagination-bullet){
+    border: 1px solid white;
+}
 </style>

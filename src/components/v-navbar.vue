@@ -58,7 +58,7 @@ export default {
           console.log(data)
     },
     linkMain(){
-      return this.$router.push('/main')
+      return this.$router.push('/')
     },
     linkSelections(){
       return this.$router.push('/selections')
