@@ -3,17 +3,20 @@
     <div class="container">
       <div class="cardSelections__cards">
         <vSliderSelections></vSliderSelections>
+        <vBestMovieSelections></vBestMovieSelections>
       </div>
     </div>
   </div>
 </template>
 <script>
 import vSliderSelections from '@/components/SelectionsCards/v-slider-selections.vue'
+import vBestMovieSelections from '@/components/SelectionsCards/v-bestMovieSelections.vue';
 
 export default {
   name: 'v-cardSelections',
   components: {
     vSliderSelections,
+    vBestMovieSelections,
   }
 }
 </script>
