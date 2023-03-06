@@ -3,7 +3,7 @@
   <div class="bestMovieSelections">
     <div class="container">
       <h2 class="bestMovieSelections__title">Лучшие фильмы подборки</h2>
-      <img
+      <img 
         src="@/assets/images/lineBestMovies.png"
         class="bestMovieSelections__line-img"
         alt="line"
@@ -25,11 +25,12 @@
       >
         <swiper-slide v-for="itemBest in swiperBestMovie">
           <div class="bestMovieSelections__box">
-            <img
+            <img v-if="itemBest.poster"
               :src="`${itemBest.poster?.previewUrl}`"
               alt="img"
               class="bestMovieSelections__img"
             />
+            <img class="bestMovieSelections__notImg" v-else src="@/assets/images/notImg.png" alt="notImages">
             <div class="bestMovieSelections__text-in-img">
               <p class="bestMovieSelections__text">{{ itemBest.name }}</p>
               <div class="bestMovieSelections__info">
@@ -108,8 +109,12 @@ export default {
     margin-left: 25px;
   }
   &__img {
-    max-width: 200px;
-    max-height: 280px;
+    width: 200px;
+    height: 280px;
+  }
+  &__notImg{
+    width: 200px;
+    height: 280px;
   }
   &__text {
     text-align: start;
