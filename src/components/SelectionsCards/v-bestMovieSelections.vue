@@ -69,11 +69,10 @@ export default {
   computed: {
     async countSelectCrime() {
       const response = await fetch(
-        "https://api.kinopoisk.dev/movie?field=genres.name&search=драма&field=genres.name&search=фантастика&field=rating.kp&search=8-10&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M"
+        `https://api.kinopoisk.dev/movie?field=genres.name&search=драма&field=genres.name&search=боевик&field=genres.name&search=фантастика&field=rating.kp&search=${this.ratingMin}-${this.ratingMax}&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M`
       );
       const data = await response.json();
       this.swiperBestMovie = data.docs;
-      console.log(data.docs);
     },
   },
   mounted() {
