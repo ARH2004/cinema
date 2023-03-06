@@ -45,6 +45,7 @@
       Выбирайте фильм и приятного просмотра!
     </h4>
   </div>
+  <!-- <vBestMovie :ratingMax="ratingMax" :ratingMin="ratingMin"/> -->
 </template>
 <script>
 import { Navigation, Pagination, Autoplay } from "swiper";
@@ -58,6 +59,8 @@ export default {
     Swiper,
     SwiperSlide,
   },
+  props: ['ratingMax','ratingMin'],
+
   data() {
     return {
       dataSelectionsSwiper: [
@@ -84,8 +87,6 @@ export default {
           bulletActiveClass: "my-bullet-active",
         },
       },
-      ratingMin: 7,
-      ratingMax: 10,
       newAge: new Date().toLocaleString('ru',{ year: 'numeric'}),
       oldAge: 1970
     };
