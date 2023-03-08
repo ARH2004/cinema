@@ -15,10 +15,6 @@
         :slides-per-view="1"
         :space-between="10"
         :autoplay="{ delay: 5000 }"
-        :navigation="{
-          nextEl: '.nextArrow',
-          prevEl: '.prevArrow',
-        }"
         :pagination="{ clickable: true }"
         :scrollbar="{ draggable: true }"
         @swiper="onSwiper"

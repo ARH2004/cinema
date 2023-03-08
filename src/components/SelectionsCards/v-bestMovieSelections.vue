@@ -14,10 +14,6 @@
         :modules="modules"
         :slides-per-view="5"
         :space-between="0"
-        :navigation="{
-          nextEl: '.nextArrow',
-          prevEl: '.prevArrow',
-        }"
         :scrollbar="{ draggable: true }"
         @swiper="onSwiper"
         @slideChange="onSlideChange"
