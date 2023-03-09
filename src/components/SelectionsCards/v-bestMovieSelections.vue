@@ -1,5 +1,5 @@
 <template>
-    <vSliderSelections :ratingMax="ratingMax" :ratingMin="ratingMin"/>
+    <!-- <vSliderSelections :ratingMax="ratingMax" :ratingMin="ratingMin"/> -->
   <div class="bestMovieSelections">
     <div class="container">
       <h2 class="bestMovieSelections__title">Лучшие фильмы подборки</h2>
