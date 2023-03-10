@@ -35,11 +35,6 @@
         </swiper-slide>
       </swiper>
     </div>
-    <h4 class="sliderSelections__title-text">
-      Мы собрали для Вас подборку лучших фильмов с рейтингом от {{ $store.state.ratingMin }} и до {{ $store.state.ratingMax }}. В неё вошли фильмы следующих жанров: Фантастика, боевик, драмма. Самый новый фильм - {{ newAge }}
-      года, самый старый фильм - {{ oldAge }} года.
-      Выбирайте фильм и приятного просмотра!
-    </h4>
   </div>
   <!-- <vBestMovie :ratingMax="ratingMax" :ratingMin="ratingMin"/> -->
 </template>
@@ -83,8 +78,6 @@ export default {
           bulletActiveClass: "my-bullet-active",
         },
       },
-      newAge: new Date().toLocaleString('ru',{ year: 'numeric'}),
-      oldAge: 1970
     };
   },
   setup() {
@@ -102,14 +95,6 @@ export default {
   }
   &__img {
     width: 100%;
-  }
-  &__title-text {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 23px;
-    margin-left: 20px;
-    margin-top: 30px;
-    color: #ffffff;
   }
   &__pagination-text {
     margin: 0px 10px -10px 10px;

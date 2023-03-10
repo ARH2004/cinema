@@ -59,17 +59,16 @@ export default {
   data() {
     return {
       swiperBestMovie: [],
-      ratingMin: 8,
-      ratingMax: 10,
     };
   },
   computed: {
     async countSelectCrime() {
       const response = await fetch(
-        `https://api.kinopoisk.dev/movie?field=genres.name&search=драма&field=genres.name&search=боевик&field=genres.name&search=фантастика&field=rating.kp&search=${this.ratingMin}-${this.ratingMax}&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M`
+        `https://api.kinopoisk.dev/v1/movie?year=2020-2023&field=genres.name&search=драма&field=rating.kp&search=${this.$store.state.ratingMin}-${this.$store.state.ratingMax }&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M`
       );
       const data = await response.json();
       this.swiperBestMovie = data.docs;
+			console.log(data.docs)
     },
   },
   mounted() {
