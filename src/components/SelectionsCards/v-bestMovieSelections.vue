@@ -2,7 +2,7 @@
     <!-- <vSliderSelections :ratingMax="ratingMax" :ratingMin="ratingMin"/> -->
   <div class="bestMovieSelections">
     <div class="container">
-      <h2 class="bestMovieSelections__title">Лучшие фильмы подборки</h2>
+      <h2 class="bestMovieSelections__title">{{ title }}</h2>
       <img 
         src="@/assets/images/lineBestMovies.png"
         class="bestMovieSelections__line-img"
@@ -56,6 +56,23 @@ export default {
     SwiperSlide,
     vSliderSelections,
   },
+	props: {
+		title: {
+			type: String
+		},
+		oldCinemaAge: {
+			type: Number
+		},
+		newCinemaAge: {
+			type: Number
+		},
+		ratingMin: {
+			type: Number
+		},
+		ratingMax: {
+			type: Number
+		}
+	},
   data() {
     return {
       swiperBestMovie: [],
@@ -64,7 +81,7 @@ export default {
   computed: {
     async countSelectCrime() {
       const response = await fetch(
-        `https://api.kinopoisk.dev/v1/movie?year=${this.$store.state.oldCinemaAge}-${this.$store.state.newCinemaAge}&field=genres.name&search=драма&field=rating.kp&search=${this.$store.state.ratingMin}-${this.$store.state.ratingMax }&token=9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M`
+        `https://api.kinopoisk.dev/v1/movie?year=${this.oldCinemaAge}-${this.newCinemaAge}&field=genres.name&search=драма&field=rating.kp&search=${this.ratingMin}-${this.ratingMax}&token=${this.$store.state.tokenApi}`
       );
       const data = await response.json();
       this.swiperBestMovie = data.docs;

@@ -45,7 +45,7 @@
           class="footer__line-two"
         />
         <div class="footer__icons">
-          <p class="footer__document">© Все права защищены MovieDB.ru 2021</p>
+          <p class="footer__document">© Все права защищены MovieDB.ru {{ $store.state.newCinemaAge }}</p>
           <div class="footer__icon">
             <img
               src="@/assets/images/facebook.png"

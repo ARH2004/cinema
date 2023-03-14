@@ -44,6 +44,7 @@ export default {
         );
         const data = await response.json();
         this.cardArrays = data.docs;
+				console.log(data.docs)
       } catch (error) {
         console.error(error.message);
       }

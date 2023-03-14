@@ -2,10 +2,8 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    ratingMax: 10,
-    ratingMin: 8,
     newCinemaAge: new Date().toLocaleString("ru", { year: "numeric" }),
-    oldCinemaAge: 1970,
+    tokenApi: "9TPR93X-XZGM9DS-PFJEGYP-GAR9W9M",
   },
   getters: {},
   mutations: {},
